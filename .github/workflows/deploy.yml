@@ -25,6 +25,9 @@ jobs:
         run: npm install
 
       - name: Build project
+        env:
+            VITE_API_KEY: ${{ secrets.VITE_API_KEY }}
+            VITE_CHANNELID: ${{ secrets.VITE_CHANNELID }}
         run: npm run build
 
       - name: Deploy to GitHub Pages
